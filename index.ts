@@ -29,7 +29,25 @@ const f_One_Register = (someProps): Promise<string> => {
 
 // we can make it wait for asyncf_Three_handleSubmit(
 ///////// Start commenting here //////////
-const f_Two_login_Void = (someMoreProps): Promise<boolean> => {
+// const f_Two_login_Void = (someMoreProps): Promise<boolean> => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log('2 f_Two login complete with:', someMoreProps);
+//       resolve('f_Two_login complete ');
+//     }, 4000);
+//   });
+// };
+// f_Three_handleSubmit(
+//   f_One_Register('someProps').then(async (args) => {
+//     await f_Two_login_Void('someMoreProps');
+//   }),
+//   'register'
+// );
+///////// stop commenting here //////////
+
+// doesn't wait for async void
+///////// case of void async without await - Start commenting here //////////
+const f_Two_login_Void = (someMoreProps): Promise<void> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log('2 f_Two login complete with:', someMoreProps);
@@ -43,21 +61,4 @@ f_Three_handleSubmit(
   }),
   'register'
 );
-///////// stop commenting here //////////
-
-// doesn't wait for async void
-///////// case of void async without await - Start commenting here //////////
-// const f_Two_login_Void = (someMoreProps): Promise<void> => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       console.log('2 f_Two login complete with:', someMoreProps);
-//     }, 4000);
-//   });
-// };
-// f_Three_handleSubmit(
-//   f_One_Register('someProps').then((args) => {
-//     f_Two_login_Void('someMoreProps');
-//   }),
-//   'register'
-// );
 ///////// stop commenting here //////////
